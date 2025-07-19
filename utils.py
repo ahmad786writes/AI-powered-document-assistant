@@ -10,7 +10,7 @@ import os
 
 
 # embedding model
-embedding_model = HuggingFaceEmbeddings(model_name="BAAI/bge-small-en-v1.5")
+embedding_model = HuggingFaceEmbeddings(model_name="intfloat/multilingual-e5-small")
 
 llm = None  # global placeholder
 
@@ -18,7 +18,7 @@ def init_llm(groq_api_key):
     global llm
     llm = ChatGroq(
         groq_api_key=groq_api_key,
-        model_name="llama3-70b-8192",
+        model_name="mistral-saba-24b",
         temperature=0.2,
     )
 
