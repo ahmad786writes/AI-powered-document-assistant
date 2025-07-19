@@ -1,4 +1,4 @@
-# LangChain RAG Chatbot with Groq
+# AI powered document assistant (LangChain RAG Chatbot with Groq)
 
 A Streamlit app that lets you upload PDFs, DOCX, and TXT files, indexes their content using embeddings, and answers questions using a Retrieval-Augmented Generation (RAG) approach powered by LangChain and Groq's LLM.
 
