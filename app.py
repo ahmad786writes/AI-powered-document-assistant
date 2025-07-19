@@ -89,9 +89,11 @@ if uploaded_files:
     user_query = st.text_input(text[language]["ask"])
 
     if user_query:
+        
+        final_query = f"أجب على هذا السؤال باللغة العربية فقط: {user_query}" if language == "العربية" else user_query
         with st.spinner(text[language]["retrieving"]):
             retrieved_docs = retrieve_top_k_docs(vectorstore, user_query)
-            answer = query_with_chain(user_query, retrieved_docs)
+            answer = query_with_chain(final_query, retrieved_docs)
 
         st.subheader(text[language]["answer"])
         st.write(answer)
