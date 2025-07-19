@@ -7,7 +7,6 @@ from langchain.chains.question_answering import load_qa_chain
 
 import tempfile
 import os
-import base64
 
 
 # embedding model
@@ -29,11 +28,6 @@ def save_file_to_disk(file):
     with open(file_path, "wb") as f:
         f.write(file.getbuffer())
     return file_path
-
-def show_pdf(file):
-    base64_pdf = base64.b64encode(file.read()).decode('utf-8')
-    pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf"></iframe>'
-    st.markdown(pdf_display, unsafe_allow_html=True)
 
 def load_file(file_path):
     if file_path.endswith(".pdf"):
